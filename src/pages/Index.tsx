@@ -1,36 +1,30 @@
 
 import React from 'react';
-import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import StatsSection from '@/components/StatsSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import MainContent from '@/components/MainContent';
-import ThreatSection from '@/components/ThreatSection';
-import ExecutiveSection from '@/components/ExecutiveSection';
+import DashboardSidebar from '@/components/DashboardSidebar';
+import DashboardHeader from '@/components/DashboardHeader';
+import MainDashboard from '@/components/MainDashboard';
+import EventsPanel from '@/components/EventsPanel';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/30">
-      <Header />
+    <div className="min-h-screen bg-background flex">
+      {/* Left Sidebar */}
+      <DashboardSidebar />
       
-      {/* Hero Section with Animated Background */}
-      <HeroSection />
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col">
+        {/* Top Header */}
+        <DashboardHeader />
         
-      <main className="relative p-6 space-y-8">
-        {/* Enhanced Stats Dashboard with Glass Effect */}
-        <StatsSection />
-
-        {/* Premium Feature Cards */}
-        <FeaturesSection />
-
-        <MainContent />
-
-        {/* Enhanced Threat Levels Section with Premium Layout */}
-        <ThreatSection />
-
-        {/* Premium Executive Section with Enhanced Gradients */}
-        <ExecutiveSection />
-      </main>
+        {/* Main Dashboard Content */}
+        <div className="flex-1 flex">
+          {/* Map and Analytics Area */}
+          <MainDashboard />
+          
+          {/* Right Events Panel */}
+          <EventsPanel />
+        </div>
+      </div>
     </div>
   );
 };
